@@ -1,26 +1,23 @@
 package io.swagger.api;
 
+import com.google.common.collect.Lists;
 import io.swagger.model.Badge;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.*;
+import io.swagger.repositories.BadgeRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RequestPart;
-import org.springframework.web.multipart.MultipartFile;
-
-import javax.validation.constraints.*;
 import javax.validation.Valid;
 import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-29T14:13:15.466Z[GMT]")
 
 @Controller
@@ -32,6 +29,9 @@ public class BadgesApiController implements BadgesApi {
 
     private final HttpServletRequest request;
 
+    @Autowired
+    private BadgeRepository badgeRepository;
+
     @org.springframework.beans.factory.annotation.Autowired
     public BadgesApiController(ObjectMapper objectMapper, HttpServletRequest request) {
         this.objectMapper = objectMapper;
@@ -40,22 +40,34 @@ public class BadgesApiController implements BadgesApi {
 
     public ResponseEntity<Void> addBadge(@ApiParam(value = "" ,required=true )  @Valid @RequestBody Badge body) {
         String accept = request.getHeader("Accept");
-        return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
+        badgeRepository.save(body);
+        return new ResponseEntity<Void>(HttpStatus.CREATED);
     }
 
     public ResponseEntity<Badge> findBadge(@ApiParam(value = "",required=true) @PathVariable("badgeId") Integer badgeId) {
         String accept = request.getHeader("Accept");
-        return new ResponseEntity<Badge>(HttpStatus.NOT_IMPLEMENTED);
+        Badge badge = badgeRepository.findOne(badgeId);
+        if (badge != null) {
+            return new ResponseEntity<Badge>(badge, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<Badge>(HttpStatus.NOT_FOUND);
+        }
     }
 
     public ResponseEntity<List<Badge>> getBadges() {
         String accept = request.getHeader("Accept");
-        return new ResponseEntity<List<Badge>>(HttpStatus.NOT_IMPLEMENTED);
+        ArrayList<Badge> badges = Lists.newArrayList(badgeRepository.findAll());
+        if (badges != null) {
+            return new ResponseEntity<List<Badge>>(badges, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<List<Badge>>(HttpStatus.NOT_FOUND);
+        }
     }
 
     public ResponseEntity<Void> updateBadge(@ApiParam(value = ""  )  @Valid @RequestBody Badge body) {
         String accept = request.getHeader("Accept");
-        return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
+        badgeRepository.save(body);
+        return new ResponseEntity<Void>(HttpStatus.OK);
     }
 
 }

@@ -8,6 +8,8 @@ import io.swagger.annotations.ApiModelProperty;
 import io.swagger.model.Badge;
 import io.swagger.model.PointScale;
 import org.springframework.validation.annotation.Validated;
+
+import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
@@ -16,28 +18,34 @@ import javax.validation.constraints.*;
  */
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-29T14:13:15.466Z[GMT]")
-
+@Entity
 public class Rule   {
   @JsonProperty("id")
-  private Integer id = null;
+  @Id
+  @GeneratedValue(strategy= GenerationType.AUTO)
+  private Integer idRule = null;
 
   @JsonProperty("name")
   private String name = null;
 
   @JsonProperty("pointScale")
+  @JoinColumn(name="idx_point_scale")
+  @ManyToOne(targetEntity = PointScale.class)
   private PointScale pointScale = null;
 
   @JsonProperty("target")
   private Integer target = null;
 
   @JsonProperty("condition")
-  private String condition = null;
+  private String operator = null;
 
   @JsonProperty("reward")
+  @JoinColumn(name="idx_badge")
+  @ManyToOne(targetEntity = Badge.class)
   private Badge reward = null;
 
   public Rule id(Integer id) {
-    this.id = id;
+    this.idRule = id;
     return this;
   }
 
@@ -45,16 +53,15 @@ public class Rule   {
    * Get id
    * @return id
   **/
-  @ApiModelProperty(required = true, value = "")
-  @NotNull
+  @ApiModelProperty(required = false, value = "")
 
 
   public Integer getId() {
-    return id;
+    return idRule;
   }
 
   public void setId(Integer id) {
-    this.id = id;
+    this.idRule = id;
   }
 
   public Rule name(String name) {
@@ -121,8 +128,8 @@ public class Rule   {
     this.target = target;
   }
 
-  public Rule condition(String condition) {
-    this.condition = condition;
+  public Rule condition(String operator) {
+    this.operator = operator;
     return this;
   }
 
@@ -134,12 +141,12 @@ public class Rule   {
   @NotNull
 
 
-  public String getCondition() {
-    return condition;
+  public String getOperator() {
+    return operator;
   }
 
-  public void setCondition(String condition) {
-    this.condition = condition;
+  public void setOperator(String operator) {
+    this.operator = operator;
   }
 
   public Rule reward(Badge reward) {
@@ -174,17 +181,17 @@ public class Rule   {
       return false;
     }
     Rule rule = (Rule) o;
-    return Objects.equals(this.id, rule.id) &&
+    return Objects.equals(this.idRule, rule.idRule) &&
         Objects.equals(this.name, rule.name) &&
         Objects.equals(this.pointScale, rule.pointScale) &&
         Objects.equals(this.target, rule.target) &&
-        Objects.equals(this.condition, rule.condition) &&
+        Objects.equals(this.operator, rule.operator) &&
         Objects.equals(this.reward, rule.reward);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, pointScale, target, condition, reward);
+    return Objects.hash(idRule, name, pointScale, target, operator, reward);
   }
 
   @Override
@@ -192,11 +199,11 @@ public class Rule   {
     StringBuilder sb = new StringBuilder();
     sb.append("class Rule {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    id: ").append(toIndentedString(idRule)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    pointScale: ").append(toIndentedString(pointScale)).append("\n");
     sb.append("    target: ").append(toIndentedString(target)).append("\n");
-    sb.append("    condition: ").append(toIndentedString(condition)).append("\n");
+    sb.append("    condition: ").append(toIndentedString(operator)).append("\n");
     sb.append("    reward: ").append(toIndentedString(reward)).append("\n");
     sb.append("}");
     return sb.toString();

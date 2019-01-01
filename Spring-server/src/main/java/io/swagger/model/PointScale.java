@@ -6,6 +6,11 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.springframework.validation.annotation.Validated;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
@@ -14,16 +19,18 @@ import javax.validation.constraints.*;
  */
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-29T14:13:15.466Z[GMT]")
-
+@Entity
 public class PointScale   {
   @JsonProperty("id")
-  private Integer id = null;
+  @Id
+  @GeneratedValue(strategy= GenerationType.AUTO)
+  private Integer idPointScale = null;
 
   @JsonProperty("name")
   private String name = null;
 
   public PointScale id(Integer id) {
-    this.id = id;
+    this.idPointScale = id;
     return this;
   }
 
@@ -31,16 +38,15 @@ public class PointScale   {
    * Get id
    * @return id
   **/
-  @ApiModelProperty(required = true, value = "")
-  @NotNull
+  @ApiModelProperty(required = false, value = "")
 
 
   public Integer getId() {
-    return id;
+    return idPointScale;
   }
 
   public void setId(Integer id) {
-    this.id = id;
+    this.idPointScale = id;
   }
 
   public PointScale name(String name) {
@@ -74,13 +80,13 @@ public class PointScale   {
       return false;
     }
     PointScale pointScale = (PointScale) o;
-    return Objects.equals(this.id, pointScale.id) &&
+    return Objects.equals(this.idPointScale, pointScale.idPointScale) &&
         Objects.equals(this.name, pointScale.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name);
+    return Objects.hash(idPointScale, name);
   }
 
   @Override
@@ -88,7 +94,7 @@ public class PointScale   {
     StringBuilder sb = new StringBuilder();
     sb.append("class PointScale {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    id: ").append(toIndentedString(idPointScale)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
     return sb.toString();

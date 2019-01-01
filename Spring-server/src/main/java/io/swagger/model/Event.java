@@ -9,6 +9,8 @@ import io.swagger.model.Property;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.validation.annotation.Validated;
+
+import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
@@ -17,10 +19,12 @@ import javax.validation.constraints.*;
  */
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-29T14:13:15.466Z[GMT]")
-
+@Entity
 public class Event   {
   @JsonProperty("id")
-  private Integer id = null;
+  @Id
+  @GeneratedValue(strategy= GenerationType.AUTO)
+  private Integer idEvent = null;
 
   @JsonProperty("userId")
   private Integer userId = null;
@@ -33,10 +37,11 @@ public class Event   {
 
   @JsonProperty("properties")
   @Valid
+  @OneToMany(targetEntity = Property.class, fetch = FetchType.EAGER, cascade=CascadeType.ALL)
   private List<Property> properties = new ArrayList<Property>();
 
   public Event id(Integer id) {
-    this.id = id;
+    this.idEvent = id;
     return this;
   }
 
@@ -44,16 +49,15 @@ public class Event   {
    * Get id
    * @return id
   **/
-  @ApiModelProperty(required = true, value = "")
-  @NotNull
+  @ApiModelProperty(required = false, value = "")
 
 
   public Integer getId() {
-    return id;
+    return idEvent;
   }
 
   public void setId(Integer id) {
-    this.id = id;
+    this.idEvent = id;
   }
 
   public Event userId(Integer userId) {
@@ -156,7 +160,7 @@ public class Event   {
       return false;
     }
     Event event = (Event) o;
-    return Objects.equals(this.id, event.id) &&
+    return Objects.equals(this.idEvent, event.idEvent) &&
         Objects.equals(this.userId, event.userId) &&
         Objects.equals(this.eventType, event.eventType) &&
         Objects.equals(this.timestamp, event.timestamp) &&
@@ -165,7 +169,7 @@ public class Event   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, userId, eventType, timestamp, properties);
+    return Objects.hash(idEvent, userId, eventType, timestamp, properties);
   }
 
   @Override
@@ -173,7 +177,7 @@ public class Event   {
     StringBuilder sb = new StringBuilder();
     sb.append("class Event {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    id: ").append(toIndentedString(idEvent)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
     sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");

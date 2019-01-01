@@ -256,8 +256,7 @@ components:
           type: integer
         name:
           type: string
-      required:  
-        - id
+      required:
         - name
     PointScale:
       properties:
@@ -265,25 +264,21 @@ components:
           type: integer
         name:
           type: string
-      required:  
-        - id
+      required:
         - name
     Rule:
       properties:
-        id:
-          type: integer
         name:
           type: string
         pointScale:
           $ref: '#/components/schemas/PointScale'
         target:
           type: integer
-        condition:
+        operator:
           type: string
         reward:
           $ref: '#/components/schemas/Badge'
       required:  
-        - id
         - name
         - pointScale
         - target
@@ -304,7 +299,6 @@ components:
           items:
             $ref: '#/components/schemas/Property'
       required:  
-        - id
         - userId
         - eventType
         - timestamp
@@ -315,8 +309,7 @@ components:
           type: integer
         name:
           type: string
-      required:  
-        - id
+      required:
         - name
     Error:
       required:

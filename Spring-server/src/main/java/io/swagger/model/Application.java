@@ -62,7 +62,6 @@ public class Application {
      * @return token
      **/
     @ApiModelProperty(required = true, value = "")
-    @NotNull
     public String getToken() {
         return token;
     }

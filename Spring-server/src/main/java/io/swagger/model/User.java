@@ -12,6 +12,7 @@ import io.swagger.annotations.ApiModelProperty;
 import org.springframework.validation.annotation.Validated;
 
 import javax.persistence.*;
+import javax.validation.Valid;
 import java.util.*;
 
 /**
@@ -31,6 +32,11 @@ public class User {
 
     @OneToMany(targetEntity = UserBadge.class, mappedBy = "user", fetch = FetchType.EAGER)
     private Set<UserBadge> userBadges = new HashSet<>();
+
+    @JsonProperty("application")
+    @JoinColumn(name="idx_application")
+    @ManyToOne(targetEntity = Application.class)
+    private Application application = null;
 
     public User id(Integer id) {
         this.idUser = id;
@@ -73,6 +79,22 @@ public class User {
     public void addUserBadge(UserBadge userBadge) {
         this.userBadges.add(userBadge);
     }
+
+    /**
+     * Get application
+     * @return application
+     **/
+    @ApiModelProperty(required = true, value = "")
+
+    @Valid
+    public Application getApplication() {
+        return application;
+    }
+
+    public void setApplication(Application application) {
+        this.application = application;
+    }
+
 
     @Override
     public boolean equals(java.lang.Object o) {

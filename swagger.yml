@@ -311,6 +311,20 @@ components:
           type: string
       required:
         - name
+    User:
+      properties:
+        id:
+          type: integer
+      required:
+        - id
+    Application:
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+      required:
+        - name
     Error:
       required:
         - code

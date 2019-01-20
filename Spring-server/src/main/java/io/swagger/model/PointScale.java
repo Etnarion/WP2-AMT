@@ -1,16 +1,16 @@
 package io.swagger.model;
 
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.springframework.validation.annotation.Validated;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
@@ -28,6 +28,14 @@ public class PointScale   {
 
   @JsonProperty("name")
   private String name = null;
+
+  @JsonProperty("application")
+  @JoinColumn(name="idx_application")
+  @ManyToOne(targetEntity = Application.class)
+  private Application application = null;
+
+  @OneToMany(targetEntity = UserScore.class, mappedBy = "pointScale", fetch = FetchType.EAGER)
+  private Set<UserScore> userScores = new HashSet<>();
 
   public PointScale id(Integer id) {
     this.idPointScale = id;
@@ -68,6 +76,33 @@ public class PointScale   {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  /**
+   * Get application
+   * @return application
+   **/
+  @ApiModelProperty(required = true, value = "")
+
+  @Valid
+  public Application getApplication() {
+    return application;
+  }
+
+  public void setApplication(Application application) {
+    this.application = application;
+  }
+
+  public Set<UserScore> getUserScores() {
+    return userScores;
+  }
+
+  public void setUserScores(Set<UserScore> scores) {
+    this.userScores = scores;
+  }
+
+  public void addUserGroup(UserScore userScore) {
+    this.userScores.add(userScore);
   }
 
 

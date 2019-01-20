@@ -7,10 +7,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.springframework.validation.annotation.Validated;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
@@ -28,6 +25,11 @@ public class Badge   {
 
   @JsonProperty("name")
   private String name = null;
+
+  @JsonProperty("application")
+  @JoinColumn(name="idx_application")
+  @ManyToOne(targetEntity = Application.class)
+  private Application application = null;
 
   public Badge id(Integer id) {
     this.idBadge = id;
@@ -70,6 +72,20 @@ public class Badge   {
     this.name = name;
   }
 
+  /**
+   * Get application
+   * @return application
+   **/
+  @ApiModelProperty(required = true, value = "")
+
+  @Valid
+  public Application getApplication() {
+    return application;
+  }
+
+  public void setApplication(Application application) {
+    this.application = application;
+  }
 
   @Override
   public boolean equals(java.lang.Object o) {

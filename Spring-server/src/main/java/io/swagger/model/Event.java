@@ -40,6 +40,11 @@ public class Event   {
   @OneToMany(targetEntity = Property.class, fetch = FetchType.EAGER, cascade=CascadeType.ALL)
   private List<Property> properties = new ArrayList<Property>();
 
+  @JsonProperty("application")
+  @JoinColumn(name="idx_application")
+  @ManyToOne(targetEntity = Application.class)
+  private Application application = null;
+
   public Event id(Integer id) {
     this.idEvent = id;
     return this;
@@ -150,6 +155,20 @@ public class Event   {
     this.properties = properties;
   }
 
+  /**
+   * Get application
+   * @return application
+   **/
+  @ApiModelProperty(required = true, value = "")
+
+  @Valid
+  public Application getApplication() {
+    return application;
+  }
+
+  public void setApplication(Application application) {
+    this.application = application;
+  }
 
   @Override
   public boolean equals(java.lang.Object o) {

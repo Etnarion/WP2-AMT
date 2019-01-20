@@ -36,13 +36,18 @@ public class Rule   {
   @JsonProperty("target")
   private Integer target = null;
 
-  @JsonProperty("condition")
-  private String operator = null;
+  @JsonProperty("eventType")
+  private String eventType = null;
 
   @JsonProperty("reward")
   @JoinColumn(name="idx_badge")
   @ManyToOne(targetEntity = Badge.class)
   private Badge reward = null;
+
+  @JsonProperty("application")
+  @JoinColumn(name="idx_application")
+  @ManyToOne(targetEntity = Application.class)
+  private Application application = null;
 
   public Rule id(Integer id) {
     this.idRule = id;
@@ -128,8 +133,8 @@ public class Rule   {
     this.target = target;
   }
 
-  public Rule condition(String operator) {
-    this.operator = operator;
+  public Rule condition(String eventType) {
+    this.eventType = eventType;
     return this;
   }
 
@@ -141,12 +146,12 @@ public class Rule   {
   @NotNull
 
 
-  public String getOperator() {
-    return operator;
+  public String getEventType() {
+    return eventType;
   }
 
-  public void setOperator(String operator) {
-    this.operator = operator;
+  public void setEventType(String eventType) {
+    this.eventType = eventType;
   }
 
   public Rule reward(Badge reward) {
@@ -171,6 +176,20 @@ public class Rule   {
     this.reward = reward;
   }
 
+  /**
+   * Get application
+   * @return application
+   **/
+  @ApiModelProperty(required = true, value = "")
+
+  @Valid
+  public Application getApplication() {
+    return application;
+  }
+
+  public void setApplication(Application application) {
+    this.application = application;
+  }
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -185,13 +204,13 @@ public class Rule   {
         Objects.equals(this.name, rule.name) &&
         Objects.equals(this.pointScale, rule.pointScale) &&
         Objects.equals(this.target, rule.target) &&
-        Objects.equals(this.operator, rule.operator) &&
+        Objects.equals(this.eventType, rule.eventType) &&
         Objects.equals(this.reward, rule.reward);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(idRule, name, pointScale, target, operator, reward);
+    return Objects.hash(idRule, name, pointScale, target, eventType, reward);
   }
 
   @Override
@@ -203,7 +222,7 @@ public class Rule   {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    pointScale: ").append(toIndentedString(pointScale)).append("\n");
     sb.append("    target: ").append(toIndentedString(target)).append("\n");
-    sb.append("    condition: ").append(toIndentedString(operator)).append("\n");
+    sb.append("    condition: ").append(toIndentedString(eventType)).append("\n");
     sb.append("    reward: ").append(toIndentedString(reward)).append("\n");
     sb.append("}");
     return sb.toString();

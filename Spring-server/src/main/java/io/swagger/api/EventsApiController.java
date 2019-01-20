@@ -1,16 +1,22 @@
 package io.swagger.api;
 
+import business.EventProcessor;
 import com.google.common.collect.Lists;
+import io.swagger.model.Application;
 import io.swagger.model.Event;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.*;
+import io.swagger.repositories.ApplicationRepository;
 import io.swagger.repositories.EventRepository;
+import io.swagger.repositories.RuleRepository;
+import io.swagger.repositories.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -31,7 +37,16 @@ public class EventsApiController implements EventsApi {
     private final HttpServletRequest request;
 
     @Autowired
+    private EventProcessor eventProcessor;
+
+    @Autowired
     private EventRepository eventRepository;
+
+    @Autowired
+    private ApplicationRepository applicationRepository;
+
+    @Autowired
+    private RuleRepository ruleRepository;
 
     @org.springframework.beans.factory.annotation.Autowired
     public EventsApiController(ObjectMapper objectMapper, HttpServletRequest request) {
@@ -41,14 +56,23 @@ public class EventsApiController implements EventsApi {
 
     public ResponseEntity<Void> addEvent(@ApiParam(value = "" ,required=true )  @Valid @RequestBody Event body) {
         String accept = request.getHeader("Accept");
-        eventRepository.save(body);
-        return new ResponseEntity<Void>(HttpStatus.CREATED);
+        String token = request.getHeader("Authorization");
+        List<Application> applications = applicationRepository.findByToken(token);
+        if (applications.size() == 1) {
+            body.setApplication(applications.get(0));
+            eventRepository.save(body);
+            eventProcessor.processEvent(body, ruleRepository.findByApplication(applications.get(0)), token);
+            return new ResponseEntity<Void>(HttpStatus.CREATED);
+        } else {
+            return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
+        }
     }
 
     public ResponseEntity<Event> findEvent(@ApiParam(value = "",required=true) @PathVariable("eventId") Integer eventId) {
         String accept = request.getHeader("Accept");
+        String token = request.getHeader("Authorization");
         Event event = eventRepository.findOne(eventId);
-        if (event != null) {
+        if (event != null && event.getApplication().getToken().equals(token)) {
             return new ResponseEntity<Event>(event, HttpStatus.OK);
         } else {
             return new ResponseEntity<Event>(HttpStatus.NOT_FOUND);
@@ -57,9 +81,15 @@ public class EventsApiController implements EventsApi {
 
     public ResponseEntity<List<Event>> getEvents() {
         String accept = request.getHeader("Accept");
-        ArrayList<Event> events = Lists.newArrayList(eventRepository.findAll());
-        if (events != null) {
-            return new ResponseEntity<List<Event>>(events, HttpStatus.OK);
+        String token = request.getHeader("Authorization");
+        List<Application> applications = applicationRepository.findByToken(token);
+        if (applications.size() == 1) {
+            ArrayList<Event> events = Lists.newArrayList(eventRepository.findByApplication(applications.get(0)));
+            if (events != null) {
+                return new ResponseEntity<List<Event>>(events, HttpStatus.OK);
+            } else {
+                return new ResponseEntity<List<Event>>(HttpStatus.NOT_FOUND);
+            }
         } else {
             return new ResponseEntity<List<Event>>(HttpStatus.NOT_FOUND);
         }
@@ -67,9 +97,15 @@ public class EventsApiController implements EventsApi {
 
     public ResponseEntity<List<Event>> getUserEvents(@ApiParam(value = "",required=true) @PathVariable("userId") Integer userId) {
         String accept = request.getHeader("Accept");
-        ArrayList<Event> events = Lists.newArrayList(eventRepository.findByUserId(userId));
-        if (events != null) {
-            return new ResponseEntity<List<Event>>(events, HttpStatus.OK);
+        String token = request.getHeader("Authorization");
+        List<Application> applications = applicationRepository.findByToken(token);
+        if (applications.size() == 1) {
+            ArrayList<Event> events = Lists.newArrayList(eventRepository.findByUserIdAndApplication(userId, applications.get(0)));
+            if (events != null) {
+                return new ResponseEntity<List<Event>>(events, HttpStatus.OK);
+            } else {
+                return new ResponseEntity<List<Event>>(HttpStatus.NOT_FOUND);
+            }
         } else {
             return new ResponseEntity<List<Event>>(HttpStatus.NOT_FOUND);
         }

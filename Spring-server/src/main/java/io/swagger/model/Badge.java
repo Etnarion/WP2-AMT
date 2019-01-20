@@ -21,6 +21,7 @@ public class Badge   {
   @JsonProperty("id")
   @Id
   @GeneratedValue(strategy= GenerationType.AUTO)
+  @Column(name = "id")
   private Integer idBadge = null;
 
   @JsonProperty("name")

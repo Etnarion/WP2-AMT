@@ -1,12 +1,14 @@
 package io.swagger.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+
+import business.EntityIdResolver;
+import com.fasterxml.jackson.annotation.*;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.model.Badge;
 import io.swagger.model.PointScale;
+import io.swagger.repositories.PointScaleRepository;
 import org.springframework.validation.annotation.Validated;
 
 import javax.persistence.*;
@@ -29,7 +31,7 @@ public class Rule   {
   private String name = null;
 
   @JsonProperty("pointScale")
-  @JoinColumn(name="idx_point_scale")
+  @JoinColumn(name="idx_point_scale", referencedColumnName = "id")
   @ManyToOne(targetEntity = PointScale.class)
   private PointScale pointScale = null;
 
@@ -39,10 +41,10 @@ public class Rule   {
   @JsonProperty("eventType")
   private String eventType = null;
 
-  @JsonProperty("reward")
-  @JoinColumn(name="idx_badge")
+  @JsonProperty("badge")
+  @JoinColumn(name="idx_badge", referencedColumnName = "id")
   @ManyToOne(targetEntity = Badge.class)
-  private Badge reward = null;
+  private Badge badge = null;
 
   @JsonProperty("application")
   @JoinColumn(name="idx_application")
@@ -90,7 +92,7 @@ public class Rule   {
     this.name = name;
   }
 
-  public Rule pointScale(PointScale pointScale) {
+  public Rule pointScale(Integer pointScaleId) {
     this.pointScale = pointScale;
     return this;
   }
@@ -154,26 +156,26 @@ public class Rule   {
     this.eventType = eventType;
   }
 
-  public Rule reward(Badge reward) {
-    this.reward = reward;
+  public Rule badge(Badge badge) {
+    this.badge = badge;
     return this;
   }
 
   /**
-   * Get reward
-   * @return reward
+   * Get badge
+   * @return badge
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
 
   @Valid
 
-  public Badge getReward() {
-    return reward;
+  public Badge getBadge() {
+    return badge;
   }
 
-  public void setReward(Badge reward) {
-    this.reward = reward;
+  public void setBadge(Badge badge) {
+    this.badge = badge;
   }
 
   /**
@@ -205,12 +207,12 @@ public class Rule   {
         Objects.equals(this.pointScale, rule.pointScale) &&
         Objects.equals(this.target, rule.target) &&
         Objects.equals(this.eventType, rule.eventType) &&
-        Objects.equals(this.reward, rule.reward);
+        Objects.equals(this.badge, rule.badge);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(idRule, name, pointScale, target, eventType, reward);
+    return Objects.hash(idRule, name, pointScale, target, eventType, badge);
   }
 
   @Override
@@ -223,7 +225,7 @@ public class Rule   {
     sb.append("    pointScale: ").append(toIndentedString(pointScale)).append("\n");
     sb.append("    target: ").append(toIndentedString(target)).append("\n");
     sb.append("    condition: ").append(toIndentedString(eventType)).append("\n");
-    sb.append("    reward: ").append(toIndentedString(reward)).append("\n");
+    sb.append("    badge: ").append(toIndentedString(badge)).append("\n");
     sb.append("}");
     return sb.toString();
   }

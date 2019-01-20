@@ -35,10 +35,10 @@ public class ApplicationsApiController implements ApplicationsApi {
         this.request = request;
     }
 
-    public ResponseEntity<String> addApplication(@ApiParam(value = "", required = true) @Valid @RequestBody Application body) {
+    public ResponseEntity<Application> addApplication(@ApiParam(value = "", required = true) @Valid @RequestBody Application body) {
         String accept = request.getHeader("Accept");
         body.setToken(UUID.randomUUID().toString());
         applicationRepository.save(body);
-        return new ResponseEntity<String>(body.getToken(), HttpStatus.CREATED);
+        return new ResponseEntity<Application>(body, HttpStatus.CREATED);
     }
 }

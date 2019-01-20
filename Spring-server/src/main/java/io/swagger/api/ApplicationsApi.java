@@ -19,5 +19,5 @@ public interface ApplicationsApi {
     @RequestMapping(value = "/applications",
             consumes = { "application/json" },
             method = RequestMethod.POST)
-    ResponseEntity<String> addApplication(@ApiParam(value = "" ,required=true )  @Valid @RequestBody Application body);
+    ResponseEntity<Application> addApplication(@ApiParam(value = "" ,required=true )  @Valid @RequestBody Application body);
 }

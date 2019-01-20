@@ -4,8 +4,7 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.*;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.springframework.validation.annotation.Validated;
@@ -24,6 +23,7 @@ public class PointScale   {
   @JsonProperty("id")
   @Id
   @GeneratedValue(strategy= GenerationType.AUTO)
+  @Column(name = "id")
   private Integer idPointScale = null;
 
   @JsonProperty("name")

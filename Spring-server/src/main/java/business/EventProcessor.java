@@ -49,7 +49,7 @@ public class EventProcessor implements EventProcessorService {
                         userScore.setScore(userScore.getScore() + 1);
                         if (userScore.getScore() == rule.getTarget()) {
                             UserBadge userBadge = new UserBadge();
-                            userBadge.setBadge(rule.getReward());
+                            userBadge.setBadge(rule.getBadge());
                             userBadge.setUser(user);
                             user.addUserBadge(userBadge);
                             userBadgeRepository.save(userBadge);

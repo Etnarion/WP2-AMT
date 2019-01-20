@@ -29,6 +29,9 @@ public class User {
     @OneToMany(targetEntity = UserScore.class, mappedBy = "user", fetch = FetchType.EAGER)
     private Set<UserScore> userScores = new HashSet<>();
 
+    @OneToMany(targetEntity = UserBadge.class, mappedBy = "user", fetch = FetchType.EAGER)
+    private Set<UserBadge> userBadges = new HashSet<>();
+
     public User id(Integer id) {
         this.idUser = id;
         return this;
@@ -61,6 +64,14 @@ public class User {
                 score.setScore(score.getScore() + increment);
             }
         }
+    }
+
+    public Set<UserBadge> getUserBadges() {
+        return userBadges;
+    }
+
+    public void addUserBadge(UserBadge userBadge) {
+        this.userBadges.add(userBadge);
     }
 
     @Override

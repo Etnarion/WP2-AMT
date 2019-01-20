@@ -1,6 +1,6 @@
 package io.swagger.api;
 
-import business.EventProcessor;
+import business.EventProcessorService;
 import com.google.common.collect.Lists;
 import io.swagger.model.Application;
 import io.swagger.model.Event;
@@ -9,14 +9,12 @@ import io.swagger.annotations.*;
 import io.swagger.repositories.ApplicationRepository;
 import io.swagger.repositories.EventRepository;
 import io.swagger.repositories.RuleRepository;
-import io.swagger.repositories.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -37,7 +35,7 @@ public class EventsApiController implements EventsApi {
     private final HttpServletRequest request;
 
     @Autowired
-    private EventProcessor eventProcessor;
+    private EventProcessorService eventProcessor;
 
     @Autowired
     private EventRepository eventRepository;

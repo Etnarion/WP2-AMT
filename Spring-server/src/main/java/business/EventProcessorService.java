@@ -6,5 +6,5 @@ import io.swagger.model.Rule;
 import java.util.List;
 
 public interface EventProcessorService {
-    public void processEvent(Event event, List<Rule> rules, String token);
+    void processEvent(Event event, List<Rule> rules, String token);
 }

@@ -2,15 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ca48752-6f99-4a28-9943-cc98e0ba6832" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../Spring-server/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Spring-server/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Spring-server/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Spring-server/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring-server/.idea/artifacts/swagger_spring_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring-server/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Spring-server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Spring-server/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Spring-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Spring-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Spring-server/src/main/java/business/EventProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Spring-server/src/main/java/business/EventProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Spring-server/src/main/java/io/swagger/api/PointScalesApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Spring-server/src/main/java/io/swagger/api/PointScalesApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Spring-server/src/main/java/io/swagger/api/RulesApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Spring-server/src/main/java/io/swagger/api/RulesApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Spring-server/target/classes/META-INF/swagger-spring.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Spring-server/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Spring-server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Spring-server/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Spring-server/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Tests" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="ExecutableSpecification.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/../../Client/target/" />
+    <ignored path="$PROJECT_DIR$/../../../Client/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,15 +37,95 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../../Client/src/main/java/io/swagger/client/api/DefaultApi.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/io/wp2/gamification/api/spec/steps/BadgeCrudSteps.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1010">
-              <caret line="881" column="46" selection-start-line="881" selection-start-column="46" selection-end-line="881" selection-end-column="46" />
+            <state relative-caret-position="465">
+              <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
               <folding>
-                <element signature="e#0#103423#0" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/scenarios/applicationCreation.feature">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/scenarios/userCrud.feature">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="54" selection-start-line="13" selection-start-column="54" selection-end-line="13" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/io/wp2/gamification/api/spec/steps/UserCrudSteps.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="855">
+              <caret line="67" column="27" selection-start-line="67" selection-start-column="12" selection-end-line="67" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/scenarios/pointScaleCrud.feature">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="62" selection-start-line="16" selection-start-column="62" selection-end-line="16" selection-end-column="62" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/io/wp2/gamification/api/spec/steps/PointScaleCrudSteps.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1350">
+              <caret line="105" column="26" selection-start-line="105" selection-start-column="8" selection-end-line="105" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/scenarios/eventProcessing.feature">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/io/wp2/gamification/api/spec/steps/EventProcessingSteps.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="438">
+              <caret line="86" column="10" selection-start-line="86" selection-start-column="10" selection-end-line="86" selection-end-column="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="930">
+              <caret line="62" column="30" selection-start-line="62" selection-start-column="30" selection-end-line="62" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -50,6 +142,9 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>io.wp2.gamification.server.url</find>
+      <find>localVarHeaderParams</find>
+      <find>addB</find>
+      <find>addbadge</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src</dir>
@@ -79,12 +174,21 @@
         <option value="$PROJECT_DIR$/src/test/java/io/wp2/gamification/api/spec/steps/CreationSteps.java" />
         <option value="$PROJECT_DIR$/src/test/resources/scenarios/creation.feature" />
         <option value="$PROJECT_DIR$/src/test/resources/scenarios/applicationCreation.feature" />
-        <option value="$PROJECT_DIR$/src/test/java/io/wp2/gamification/api/spec/helpers/Environment.java" />
         <option value="$PROJECT_DIR$/src/test/java/io/wp2/gamification/api/spec/steps/ApplicationCreationSteps.java" />
-        <option value="$PROJECT_DIR$/src/test/resources/scenarios/badgeCreation.feature" />
+        <option value="$PROJECT_DIR$/src/test/java/io/wp2/gamification/api/spec/helpers/Environment.java" />
         <option value="$PROJECT_DIR$/src/test/resources/scenarios/userCreation.feature" />
+        <option value="$PROJECT_DIR$/src/test/resources/scenarios/badgeCreation.feature" />
         <option value="$PROJECT_DIR$/src/test/java/io/wp2/gamification/api/spec/steps/UserCreationSteps.java" />
+        <option value="$PROJECT_DIR$/../../../Client/src/main/java/io/swagger/client/api/DefaultApi.java" />
         <option value="$PROJECT_DIR$/src/test/java/io/wp2/gamification/api/spec/steps/BadgeCreationSteps.java" />
+        <option value="$PROJECT_DIR$/src/test/java/io/wp2/gamification/api/spec/steps/BadgeCrudSteps.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/scenarios/badgeCrud.feature" />
+        <option value="$PROJECT_DIR$/src/test/resources/scenarios/userCrud.feature" />
+        <option value="$PROJECT_DIR$/src/test/resources/scenarios/pointScaleCrud.feature" />
+        <option value="$PROJECT_DIR$/src/test/java/io/wp2/gamification/api/spec/steps/PointScaleCrudSteps.java" />
+        <option value="$PROJECT_DIR$/src/test/java/io/wp2/gamification/api/spec/steps/UserCrudSteps.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/scenarios/eventProcessing.feature" />
+        <option value="$PROJECT_DIR$/src/test/java/io/wp2/gamification/api/spec/steps/EventProcessingSteps.java" />
       </list>
     </option>
   </component>
@@ -127,9 +231,9 @@
     </treeState>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds">
-    <option name="width" value="1920" />
-    <option name="height" value="1053" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="width" value="959" />
+    <option name="height" value="1052" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -140,6 +244,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -200,11 +305,86 @@
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="ExecutableSpecification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gamification-specs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ExecutableSpecification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gamification-specs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ExecutableSpecification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gamification-specs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ExecutableSpecification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gamification-specs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ExecutableSpecification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gamification-specs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ExecutableSpecification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gamification-specs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ExecutableSpecification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gamification-specs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="spec" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ExecutableSpecification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gamification-specs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="spec" type="462c0819:PsiDirectoryNode" />
+              <item name="helpers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ExecutableSpecification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gamification-specs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="spec" type="462c0819:PsiDirectoryNode" />
+              <item name="steps" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ExecutableSpecification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gamification-specs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ExecutableSpecification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gamification-specs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="scenarios" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -213,7 +393,7 @@
     <property name="OverrideImplement.overriding.sorted" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548340094111" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548416190491" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -650,44 +830,46 @@
       <workItem from="1548013750979" duration="891000" />
       <workItem from="1548014950554" duration="661000" />
       <workItem from="1548016777167" duration="20445000" />
-      <workItem from="1548330312627" duration="799000" />
+      <workItem from="1548330312627" duration="605000" />
+      <workItem from="1548340120736" duration="15089000" />
+      <workItem from="1548416230004" duration="19000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SpecificationTest - 2019.01.21 at 14h 56m 23s.xml">
+    <history-entry file="SpecificationTest - 2019.01.25 at 10h 01m 53s.xml">
       <configuration name="SpecificationTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SpecificationTest - 2019.01.21 at 14h 58m 23s.xml">
+    <history-entry file="SpecificationTest - 2019.01.25 at 10h 13m 57s.xml">
       <configuration name="SpecificationTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SpecificationTest - 2019.01.21 at 14h 58m 45s.xml">
+    <history-entry file="SpecificationTest - 2019.01.25 at 10h 21m 13s.xml">
       <configuration name="SpecificationTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SpecificationTest - 2019.01.21 at 14h 59m 31s.xml">
+    <history-entry file="SpecificationTest - 2019.01.25 at 10h 21m 41s.xml">
       <configuration name="SpecificationTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SpecificationTest - 2019.01.21 at 15h 00m 04s.xml">
+    <history-entry file="SpecificationTest - 2019.01.25 at 10h 28m 47s.xml">
       <configuration name="SpecificationTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SpecificationTest - 2019.01.21 at 15h 02m 08s.xml">
+    <history-entry file="SpecificationTest - 2019.01.25 at 10h 37m 09s.xml">
       <configuration name="SpecificationTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SpecificationTest - 2019.01.21 at 15h 03m 14s.xml">
+    <history-entry file="SpecificationTest - 2019.01.25 at 10h 38m 11s.xml">
       <configuration name="SpecificationTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SpecificationTest - 2019.01.21 at 15h 05m 22s.xml">
+    <history-entry file="SpecificationTest - 2019.01.25 at 10h 40m 21s.xml">
       <configuration name="SpecificationTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SpecificationTest - 2019.01.21 at 15h 07m 10s.xml">
+    <history-entry file="SpecificationTest - 2019.01.25 at 10h 41m 46s.xml">
       <configuration name="SpecificationTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SpecificationTest - 2019.01.24 at 15h 28m 23s.xml">
+    <history-entry file="SpecificationTest - 2019.01.25 at 11h 22m 57s.xml">
       <configuration name="SpecificationTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33116000" />
+    <option name="totallyTimeSpent" value="48030000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -699,10 +881,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1053" extended-state="0" />
+    <frame x="0" y="-1" width="1920" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25720385" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26254" />
       <window_info id="Structure" order="1" weight="0.24964234" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -713,8 +895,8 @@
       <window_info id="Captures" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32938644" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.44564047" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39827773" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.44456404" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.2640086" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32871014" />
@@ -722,7 +904,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.34257975" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32938644" />
       <window_info anchor="bottom" id="Application Servers" order="10" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32938644" />
+      <window_info active="true" anchor="bottom" id="Messages" order="11" visible="true" weight="0.32938644" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Android Profiler" order="14" show_stripe_button="false" />
@@ -777,6 +959,12 @@
           <properties />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/io/wp2/gamification/api/spec/steps/BadgeCrudSteps.java</url>
+          <line>90</line>
+          <properties />
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -806,35 +994,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Client/.travis.yml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Client/swagger-java-client.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Client/src/main/java/io/swagger/client/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Client/.travis.yml" />
+    <entry file="file://$PROJECT_DIR$/../../Client/swagger-java-client.iml" />
+    <entry file="file://$PROJECT_DIR$/../../Client/src/main/java/io/swagger/client/model/User.java" />
     <entry file="file://$PROJECT_DIR$/../../Client/src/main/java/io/swagger/client/model/UserBadge.java" />
     <entry file="file://$PROJECT_DIR$/../../Client/src/main/java/io/swagger/client/model/UserScore.java" />
-    <entry file="file://$PROJECT_DIR$/../../Client/src/main/java/io/swagger/client/model/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Client/src/main/java/io/swagger/client/model/Badge.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Client/src/main/java/io/swagger/client/model/Application.java" />
+    <entry file="file://$PROJECT_DIR$/../../Client/src/main/java/io/swagger/client/model/Badge.java" />
     <entry file="file://$PROJECT_DIR$/src/test/resources/environment.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -842,62 +1008,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="62" column="30" lean-forward="true" selection-start-line="62" selection-start-column="30" selection-end-line="62" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Client/src/test/java/io/swagger/client/api/DefaultApiTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Client/src/main/java/io/swagger/client/auth/HttpBasicAuth.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Client/src/main/java/io/swagger/client/auth/OAuthFlow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Client/src/main/java/io/swagger/client/auth/ApiKeyAuth.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="19" column="147" selection-start-line="19" selection-start-column="147" selection-end-line="19" selection-end-column="147" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Client/src/main/java/io/swagger/client/auth/Authentication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Client/src/main/java/io/swagger/client/auth/OAuth.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="35" column="3" lean-forward="true" selection-start-line="35" selection-start-column="3" selection-end-line="35" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Client/src/main/java/io/swagger/client/ApiClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="336" selection-start-line="336" selection-end-line="336" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Client/src/test/java/io/swagger/client/api/DefaultApiTest.java" />
+    <entry file="file://$PROJECT_DIR$/../../Client/src/main/java/io/swagger/client/auth/HttpBasicAuth.java" />
+    <entry file="file://$PROJECT_DIR$/../../Client/src/main/java/io/swagger/client/auth/OAuthFlow.java" />
+    <entry file="file://$PROJECT_DIR$/../../Client/src/main/java/io/swagger/client/auth/ApiKeyAuth.java" />
+    <entry file="file://$PROJECT_DIR$/../../Client/src/main/java/io/swagger/client/auth/Authentication.java" />
+    <entry file="file://$PROJECT_DIR$/../../Client/src/main/java/io/swagger/client/auth/OAuth.java" />
+    <entry file="file://$PROJECT_DIR$/../../Client/src/main/java/io/swagger/client/ApiClient.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/info/cukes/cucumber-junit/1.2.5/cucumber-junit-1.2.5.jar!/cucumber/api/junit/Cucumber.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -905,31 +1022,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/io/wp2/gamification/api/spec/SpecificationTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/info/cukes/cucumber-core/1.2.5/cucumber-core-1.2.5.jar!/cucumber/runtime/Timeout.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/info/cukes/cucumber-core/1.2.5/cucumber-core-1.2.5.jar!/cucumber/runtime/Utils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-          <folding>
-            <element signature="e#1335#2267#0" expanded="true" />
-            <element signature="e#2266#2267#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -961,40 +1057,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/scenarios/userCreation.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="55" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/scenarios/applicationCreation.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/io/wp2/gamification/api/spec/helpers/Environment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/scenarios/badgeCreation.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="32" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Client/src/main/java/io/swagger/client/api/DefaultApi.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/io/wp2/gamification/api/spec/steps/ApplicationCreationSteps.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="729">
+        <state relative-caret-position="795">
           <caret line="69" column="42" selection-start-line="69" selection-start-column="42" selection-end-line="69" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1002,32 +1068,114 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/io/wp2/gamification/api/spec/steps/BadgeCreationSteps.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/io/wp2/gamification/api/spec/SpecificationTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="685">
-          <caret line="66" column="33" selection-start-line="66" selection-start-column="33" selection-end-line="66" selection-end-column="33" />
+        <state relative-caret-position="180">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/io/wp2/gamification/api/spec/steps/UserCreationSteps.java">
+    <entry file="file://$PROJECT_DIR$/../../../Client/src/main/java/io/swagger/client/auth/OAuth.java" />
+    <entry file="file://$PROJECT_DIR$/../../../Client/src/main/java/io/swagger/client/ApiClient.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/info/cukes/cucumber-core/1.2.5/cucumber-core-1.2.5.jar!/cucumber/runtime/Utils.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+        <state relative-caret-position="160">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/io/wp2/gamification/api/spec/helpers/Environment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Client/src/main/java/io/swagger/client/api/DefaultApi.java">
+    <entry file="file://$PROJECT_DIR$/../../../Client/src/main/java/io/swagger/client/api/DefaultApi.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/resources/scenarios/badgeCrud.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1010">
-          <caret line="881" column="46" selection-start-line="881" selection-start-column="46" selection-end-line="881" selection-end-column="46" />
+        <state relative-caret-position="225">
+          <caret line="15" column="2" lean-forward="true" selection-start-line="15" selection-start-column="2" selection-end-line="21" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../Client/src/main/java/io/swagger/client/model/Property.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/io/wp2/gamification/api/spec/steps/BadgeCrudSteps.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
           <folding>
-            <element signature="e#0#103423#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/scenarios/applicationCreation.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/scenarios/userCrud.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="54" selection-start-line="13" selection-start-column="54" selection-end-line="13" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/io/wp2/gamification/api/spec/steps/UserCrudSteps.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="67" column="27" selection-start-line="67" selection-start-column="12" selection-end-line="67" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/scenarios/pointScaleCrud.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="62" selection-start-line="16" selection-start-column="62" selection-end-line="16" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/io/wp2/gamification/api/spec/steps/PointScaleCrudSteps.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1350">
+          <caret line="105" column="26" selection-start-line="105" selection-start-column="8" selection-end-line="105" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/scenarios/eventProcessing.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="930">
+          <caret line="62" column="30" selection-start-line="62" selection-start-column="30" selection-end-line="62" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/io/wp2/gamification/api/spec/steps/EventProcessingSteps.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="86" column="10" selection-start-line="86" selection-start-column="10" selection-end-line="86" selection-end-column="10" />
+          <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>

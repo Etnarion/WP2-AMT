@@ -32,6 +32,7 @@ public class EventProcessor implements EventProcessorService {
             user = new User();
             List<Application> applications = applicationRepository.findByToken(token);
             if (applications.size() == 1) {
+                user.setApplication(applications.get(0));
                 for (PointScale pointScale : pointScaleRepository.findByApplication(applications.get(0))) {
                     UserScore userScore = new UserScore();
                     userScore.setPointScale(pointScale);

@@ -77,13 +77,19 @@ public class EventProcessingSteps {
     }
 
     @Given("^there is two rule in database$")
-    public void there_is_two_rule_in_database() {
+    public void there_is_two_rule_in_database() throws ApiException {
         api.getApiClient().addDefaultHeader("Authorization", token);
         Rule rule1 = new Rule();
         Rule rule2 = new Rule();
-        rule1.setName("rule");
-        rule1.setReward(badge1);
+        rule1.setName("rule1");
+        rule1.setBadge(badge1);
         rule1.setPointScale(pointScale1);
-        //assertEquals(201, api.addUserWithHttpInfo(user).getStatusCode());
+        rule1.setEventType("eventType1");
+        rule2.setName("rule2");
+        rule2.setBadge(badge2);
+        rule2.setPointScale(pointScale2);
+        rule2.setEventType("eventType2");
+        assertEquals(201, api.addRuleWithHttpInfo(rule1).getStatusCode());
+        assertEquals(201, api.addRuleWithHttpInfo(rule2).getStatusCode());
     }
 }

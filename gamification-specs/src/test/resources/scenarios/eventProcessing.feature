@@ -6,4 +6,5 @@ Feature: Processing of events
     Given there are two badges in database
     Given there are two pointScales in database
     Given there is a user in database
-    Given there is a rule in database
+    Given there is two rule in database
+    When 

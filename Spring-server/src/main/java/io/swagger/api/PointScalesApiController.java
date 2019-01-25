@@ -19,11 +19,13 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -57,7 +59,11 @@ public class PointScalesApiController implements PointScalesApi {
         if (applications.size() == 1) {
             body.setApplication(applications.get(0));
             pointScaleRepository.save(body);
-            return new ResponseEntity<Void>(HttpStatus.CREATED);
+            URI location = ServletUriComponentsBuilder
+                    .fromCurrentRequest().path("/{id}")
+                    .buildAndExpand(body.getId()).toUri();
+
+            return ResponseEntity.created(location).build();
         } else {
             return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
         }

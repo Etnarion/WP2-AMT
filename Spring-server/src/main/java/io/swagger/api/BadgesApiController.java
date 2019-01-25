@@ -15,8 +15,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
 import javax.validation.Valid;
 import javax.servlet.http.HttpServletRequest;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,7 +54,11 @@ public class BadgesApiController implements BadgesApi {
             Application application = applications.get(0);
             body.setApplication(application);
             badgeRepository.save(body);
-            return new ResponseEntity<Void>(HttpStatus.CREATED);
+            URI location = ServletUriComponentsBuilder
+                    .fromCurrentRequest().path("/{id}")
+                    .buildAndExpand(body.getId()).toUri();
+
+            return ResponseEntity.created(location).build();
         } else {
             return new ResponseEntity<Void>(HttpStatus.FORBIDDEN);
         }
@@ -62,7 +69,7 @@ public class BadgesApiController implements BadgesApi {
         String accept = request.getHeader("Accept");
         String token = request.getHeader("Authorization");
         Badge badge = badgeRepository.findOne(badgeId);
-        if (badge != null && badge.getApplication().getToken().equals(token)) {
+        if (badge != null) {
             return new ResponseEntity<Badge>(badge, HttpStatus.OK);
         } else {
             return new ResponseEntity<Badge>(HttpStatus.NOT_FOUND);

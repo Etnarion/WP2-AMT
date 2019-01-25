@@ -282,8 +282,8 @@ components:
         - name
         - pointScale
         - target
-        - condition
-        - reward
+        - eventType
+        - badge
     Event:
       properties:
         id:

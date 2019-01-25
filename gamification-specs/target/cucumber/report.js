@@ -22,7 +22,7 @@ formatter.match({
   "location": "ApplicationCreationSteps.there_is_an_Applications_server()"
 });
 formatter.result({
-  "duration": 380995463,
+  "duration": 314354560,
   "status": "passed"
 });
 formatter.scenario({
@@ -52,14 +52,14 @@ formatter.match({
   "location": "ApplicationCreationSteps.i_have_an_application_payload()"
 });
 formatter.result({
-  "duration": 1876701,
+  "duration": 6489242,
   "status": "passed"
 });
 formatter.match({
   "location": "ApplicationCreationSteps.i_POST_it_to_the_applications_endpoint()"
 });
 formatter.result({
-  "duration": 424345261,
+  "duration": 362138535,
   "status": "passed"
 });
 formatter.match({
@@ -72,7 +72,7 @@ formatter.match({
   "location": "ApplicationCreationSteps.i_receive_a_status_code_and_an_application_payload(int)"
 });
 formatter.result({
-  "duration": 3240366,
+  "duration": 3582295,
   "status": "passed"
 });
 formatter.uri("badgeCrud.feature");
@@ -99,7 +99,7 @@ formatter.match({
   "location": "BadgeCrudSteps.there_is_a_Badges_server_and_a_token()"
 });
 formatter.result({
-  "duration": 37403544,
+  "duration": 50919147,
   "status": "passed"
 });
 formatter.scenario({
@@ -129,14 +129,14 @@ formatter.match({
   "location": "BadgeCrudSteps.i_have_a_badge_payload()"
 });
 formatter.result({
-  "duration": 283108,
+  "duration": 4710419,
   "status": "passed"
 });
 formatter.match({
   "location": "BadgeCrudSteps.i_POST_it_to_the_badges_endpoint()"
 });
 formatter.result({
-  "duration": 26085808,
+  "duration": 37709371,
   "status": "passed"
 });
 formatter.match({
@@ -149,7 +149,7 @@ formatter.match({
   "location": "BadgeCrudSteps.i_receive_a_status_code_for_badge_creation(int)"
 });
 formatter.result({
-  "duration": 201077,
+  "duration": 181655,
   "status": "passed"
 });
 formatter.background({
@@ -168,7 +168,7 @@ formatter.match({
   "location": "BadgeCrudSteps.there_is_a_Badges_server_and_a_token()"
 });
 formatter.result({
-  "duration": 28193181,
+  "duration": 22933161,
   "status": "passed"
 });
 formatter.scenario({
@@ -198,14 +198,14 @@ formatter.match({
   "location": "BadgeCrudSteps.i_have_a_badge_payload()"
 });
 formatter.result({
-  "duration": 63616,
+  "duration": 67027,
   "status": "passed"
 });
 formatter.match({
   "location": "BadgeCrudSteps.i_POST_it_to_the_badges_endpoint_with_token()"
 });
 formatter.result({
-  "duration": 40236032,
+  "duration": 27359841,
   "status": "passed"
 });
 formatter.match({
@@ -218,7 +218,7 @@ formatter.match({
   "location": "BadgeCrudSteps.i_receive_a_status_code_for_badge_creation(int)"
 });
 formatter.result({
-  "duration": 153199,
+  "duration": 173546,
   "status": "passed"
 });
 formatter.background({
@@ -237,7 +237,7 @@ formatter.match({
   "location": "BadgeCrudSteps.there_is_a_Badges_server_and_a_token()"
 });
 formatter.result({
-  "duration": 21340866,
+  "duration": 22933698,
   "status": "passed"
 });
 formatter.scenario({
@@ -262,7 +262,7 @@ formatter.match({
   "location": "BadgeCrudSteps.i_GET_a_badge_by_its_id()"
 });
 formatter.result({
-  "duration": 14309796,
+  "duration": 22674100,
   "status": "passed"
 });
 formatter.match({
@@ -275,7 +275,7 @@ formatter.match({
   "location": "BadgeCrudSteps.i_receive_a_status_code_and_a_badge_payload(int)"
 });
 formatter.result({
-  "duration": 175121,
+  "duration": 200828,
   "status": "passed"
 });
 formatter.background({
@@ -294,7 +294,7 @@ formatter.match({
   "location": "BadgeCrudSteps.there_is_a_Badges_server_and_a_token()"
 });
 formatter.result({
-  "duration": 32612050,
+  "duration": 28986184,
   "status": "passed"
 });
 formatter.scenario({
@@ -319,7 +319,7 @@ formatter.match({
   "location": "BadgeCrudSteps.I_GET_badges()"
 });
 formatter.result({
-  "duration": 23259679,
+  "duration": 15250111,
   "status": "passed"
 });
 formatter.match({
@@ -332,7 +332,7 @@ formatter.match({
   "location": "BadgeCrudSteps.i_receive_a_status_code_and_a_badges_payload(int)"
 });
 formatter.result({
-  "duration": 213834,
+  "duration": 206779,
   "status": "passed"
 });
 formatter.uri("eventProcessing.feature");
@@ -384,44 +384,43 @@ formatter.match({
   "location": "EventProcessingSteps.there_is_a_events_server()"
 });
 formatter.result({
-  "duration": 677048,
+  "duration": 5473506,
   "status": "passed"
 });
 formatter.match({
   "location": "EventProcessingSteps.there_is_an_application_in_database()"
 });
 formatter.result({
-  "duration": 19384496,
+  "duration": 23986202,
   "status": "passed"
 });
 formatter.match({
   "location": "EventProcessingSteps.there_are_two_badges_in_database()"
 });
 formatter.result({
-  "duration": 63383783,
+  "duration": 85265281,
   "status": "passed"
 });
 formatter.match({
   "location": "EventProcessingSteps.there_are_two_pointScales_in_database()"
 });
 formatter.result({
-  "duration": 42368756,
+  "duration": 84892586,
   "status": "passed"
 });
 formatter.match({
   "location": "EventProcessingSteps.there_is_a_user_in_database()"
 });
 formatter.result({
-  "duration": 26503796,
+  "duration": 27271127,
   "status": "passed"
 });
 formatter.match({
   "location": "EventProcessingSteps.there_is_two_rule_in_database()"
 });
 formatter.result({
-  "duration": 37397733,
-  "error_message": "io.swagger.client.ApiException: \n\tat io.swagger.client.ApiClient.handleResponse(ApiClient.java:923)\n\tat io.swagger.client.ApiClient.execute(ApiClient.java:839)\n\tat io.swagger.client.ApiClient.execute(ApiClient.java:822)\n\tat io.swagger.client.api.DefaultApi.addRuleWithHttpInfo(DefaultApi.java:630)\n\tat io.wp2.gamification.api.spec.steps.EventProcessingSteps.there_is_two_rule_in_database(EventProcessingSteps.java:92)\n\tat ✽.Given there is two rule in database(eventProcessing.feature:9)\n",
-  "status": "failed"
+  "duration": 50529313,
+  "status": "passed"
 });
 formatter.scenario({
   "line": 11,
@@ -450,19 +449,22 @@ formatter.match({
   "location": "EventProcessingSteps.i_have_an_event_payload()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 420380,
+  "status": "passed"
 });
 formatter.match({
   "location": "EventProcessingSteps.i_POST_it_to_the_events_endpoint_with_token()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 58813788,
+  "status": "passed"
 });
 formatter.match({
   "location": "EventProcessingSteps.i_receive_a_201_status_code_for_event_creation()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 66994,
+  "status": "passed"
 });
 formatter.uri("pointScaleCrud.feature");
 formatter.feature({
@@ -488,7 +490,7 @@ formatter.match({
   "location": "PointScaleCrudSteps.there_is_a_PointScales_server_and_a_token()"
 });
 formatter.result({
-  "duration": 16198465,
+  "duration": 28916760,
   "status": "passed"
 });
 formatter.scenario({
@@ -518,14 +520,14 @@ formatter.match({
   "location": "PointScaleCrudSteps.i_have_a_pointscale_payload()"
 });
 formatter.result({
-  "duration": 94414,
+  "duration": 94026,
   "status": "passed"
 });
 formatter.match({
   "location": "PointScaleCrudSteps.i_POST_it_to_the_pointscales_endpoint_with_token()"
 });
 formatter.result({
-  "duration": 30683847,
+  "duration": 20239912,
   "status": "passed"
 });
 formatter.match({
@@ -538,7 +540,7 @@ formatter.match({
   "location": "PointScaleCrudSteps.i_receive_a_status_code_for_pointscale_creation(int)"
 });
 formatter.result({
-  "duration": 200151,
+  "duration": 208232,
   "status": "passed"
 });
 formatter.background({
@@ -557,7 +559,7 @@ formatter.match({
   "location": "PointScaleCrudSteps.there_is_a_PointScales_server_and_a_token()"
 });
 formatter.result({
-  "duration": 21851504,
+  "duration": 26150847,
   "status": "passed"
 });
 formatter.scenario({
@@ -582,7 +584,7 @@ formatter.match({
   "location": "PointScaleCrudSteps.i_GET_a_pointscale_by_its_id()"
 });
 formatter.result({
-  "duration": 14369752,
+  "duration": 27031857,
   "status": "passed"
 });
 formatter.match({
@@ -595,7 +597,7 @@ formatter.match({
   "location": "PointScaleCrudSteps.i_receive_a_status_code_and_a_pointscales_payload(int)"
 });
 formatter.result({
-  "duration": 176631,
+  "duration": 189237,
   "status": "passed"
 });
 formatter.background({
@@ -614,7 +616,7 @@ formatter.match({
   "location": "PointScaleCrudSteps.there_is_a_PointScales_server_and_a_token()"
 });
 formatter.result({
-  "duration": 19728286,
+  "duration": 43357447,
   "status": "passed"
 });
 formatter.scenario({
@@ -639,7 +641,7 @@ formatter.match({
   "location": "PointScaleCrudSteps.I_GET_pointscales()"
 });
 formatter.result({
-  "duration": 15536467,
+  "duration": 14290971,
   "status": "passed"
 });
 formatter.match({
@@ -652,7 +654,7 @@ formatter.match({
   "location": "PointScaleCrudSteps.i_receive_a_status_code_and_a_pointscales_payload(int)"
 });
 formatter.result({
-  "duration": 193070,
+  "duration": 163356,
   "status": "passed"
 });
 formatter.uri("userCrud.feature");
@@ -679,7 +681,7 @@ formatter.match({
   "location": "UserCrudSteps.there_is_an_Users_server()"
 });
 formatter.result({
-  "duration": 25705371,
+  "duration": 17435448,
   "status": "passed"
 });
 formatter.scenario({
@@ -709,14 +711,14 @@ formatter.match({
   "location": "UserCrudSteps.i_have_a_user_payload()"
 });
 formatter.result({
-  "duration": 81213,
+  "duration": 85169,
   "status": "passed"
 });
 formatter.match({
   "location": "UserCrudSteps.i_POST_it_to_the_users_endpoint()"
 });
 formatter.result({
-  "duration": 28990009,
+  "duration": 8834675,
   "status": "passed"
 });
 formatter.match({
@@ -729,7 +731,7 @@ formatter.match({
   "location": "UserCrudSteps.i_receive_a_status_code_for_user_creation(int)"
 });
 formatter.result({
-  "duration": 208830,
+  "duration": 164693,
   "status": "passed"
 });
 formatter.background({
@@ -748,7 +750,7 @@ formatter.match({
   "location": "UserCrudSteps.there_is_an_Users_server()"
 });
 formatter.result({
-  "duration": 47574738,
+  "duration": 19835591,
   "status": "passed"
 });
 formatter.scenario({
@@ -778,14 +780,14 @@ formatter.match({
   "location": "UserCrudSteps.i_have_a_user_payload()"
 });
 formatter.result({
-  "duration": 2638760,
+  "duration": 102338,
   "status": "passed"
 });
 formatter.match({
   "location": "UserCrudSteps.i_POST_it_to_the_users_endpoint_with_token()"
 });
 formatter.result({
-  "duration": 41369500,
+  "duration": 26232049,
   "status": "passed"
 });
 formatter.match({
@@ -798,7 +800,7 @@ formatter.match({
   "location": "UserCrudSteps.i_receive_a_status_code_for_user_creation(int)"
 });
 formatter.result({
-  "duration": 232324,
+  "duration": 142582,
   "status": "passed"
 });
 });

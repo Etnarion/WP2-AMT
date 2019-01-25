@@ -9,6 +9,9 @@ import io.swagger.client.api.DefaultApi;
 import io.swagger.client.model.*;
 import io.wp2.gamification.api.spec.helpers.Environment;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertEquals;
 
@@ -21,6 +24,7 @@ public class EventProcessingSteps {
     private PointScale pointScale1;
     private PointScale pointScale2;
     private Event event;
+    private User user;
 
     private ApiResponse lastApiResponse;
     private ApiException lastApiException;
@@ -54,6 +58,11 @@ public class EventProcessingSteps {
         badge2.setName("badge2");
         int status1 = api.addBadgeWithHttpInfo(badge1).getStatusCode();
         int status2 = api.addBadgeWithHttpInfo(badge2).getStatusCode();
+        if (status1 == 201 && status2 == 201) {
+            List<Badge> badges = api.getBadges();
+            badge1 = badges.get(0);
+            badge2 = badges.get(1);
+        }
     }
 
     @Given("^there are two pointScales in database$")
@@ -65,13 +74,15 @@ public class EventProcessingSteps {
         pointScale2.setName("ps2");
         assertEquals(201, api.addPointScaleWithHttpInfo(pointScale1).getStatusCode());
         assertEquals(201, api.addPointScaleWithHttpInfo(pointScale2).getStatusCode());
+        List<PointScale> pointScales = api.getPointScales();
+        pointScale1 = pointScales.get(0);
+        pointScale2 = pointScales.get(1);
     }
 
-    @Given("^there is a user in database$")
     public void there_is_a_user_in_database() throws ApiException {
         api.getApiClient().addDefaultHeader("Authorization", token);
-        User user = new User();
-        assertEquals(201, api.addUserWithHttpInfo(user).getStatusCode());
+        user = new User();
+        user = api.addUserWithHttpInfo(user).getData();
     }
 
     @Given("^there is two rule in database$")
@@ -98,6 +109,7 @@ public class EventProcessingSteps {
         event = new Event();
         event.setEventType("eventType1");
         event.setTimestamp("Now");
+        event.setUserId(user.getId());
     }
 
     @When("^I POST it to the /events endpoint with token$")

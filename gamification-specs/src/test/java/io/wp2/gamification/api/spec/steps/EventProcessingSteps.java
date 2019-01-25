@@ -6,10 +6,7 @@ import cucumber.api.java.en.When;
 import io.swagger.client.ApiException;
 import io.swagger.client.ApiResponse;
 import io.swagger.client.api.DefaultApi;
-import io.swagger.client.model.Badge;
-import io.swagger.client.model.PointScale;
-import io.swagger.client.model.Rule;
-import io.swagger.client.model.User;
+import io.swagger.client.model.*;
 import io.wp2.gamification.api.spec.helpers.Environment;
 
 import static org.junit.Assert.assertNotNull;
@@ -23,6 +20,7 @@ public class EventProcessingSteps {
     private Badge badge2;
     private PointScale pointScale1;
     private PointScale pointScale2;
+    private Event event;
 
     private ApiResponse lastApiResponse;
     private ApiException lastApiException;
@@ -54,8 +52,8 @@ public class EventProcessingSteps {
         badge2 = new Badge();
         badge1.setName("badge1");
         badge2.setName("badge2");
-        assertEquals(201, api.addBadgeWithHttpInfo(badge1).getStatusCode());
-        assertEquals(201, api.addBadgeWithHttpInfo(badge2).getStatusCode());
+        int status1 = api.addBadgeWithHttpInfo(badge1).getStatusCode();
+        int status2 = api.addBadgeWithHttpInfo(badge2).getStatusCode();
     }
 
     @Given("^there are two pointScales in database$")
@@ -84,12 +82,42 @@ public class EventProcessingSteps {
         rule1.setName("rule1");
         rule1.setBadge(badge1);
         rule1.setPointScale(pointScale1);
+        rule1.setTarget(2);
         rule1.setEventType("eventType1");
         rule2.setName("rule2");
         rule2.setBadge(badge2);
         rule2.setPointScale(pointScale2);
+        rule2.setTarget(3);
         rule2.setEventType("eventType2");
         assertEquals(201, api.addRuleWithHttpInfo(rule1).getStatusCode());
         assertEquals(201, api.addRuleWithHttpInfo(rule2).getStatusCode());
+    }
+
+    @Given("^I have an event payload$")
+    public void i_have_an_event_payload() {
+        event = new Event();
+        event.setEventType("eventType1");
+        event.setTimestamp("Now");
+    }
+
+    @When("^I POST it to the /events endpoint with token$")
+    public void i_POST_it_to_the_events_endpoint_with_token() {
+        try {
+            api.getApiClient().addDefaultHeader("Authorization", token);
+            lastApiResponse = api.addEventWithHttpInfo(event);
+            lastApiCallThrewException = false;
+            lastApiException = null;
+            lastStatusCode = lastApiResponse.getStatusCode();
+        } catch (ApiException e) {
+            lastApiCallThrewException = true;
+            lastApiResponse = null;
+            lastApiException = e;
+            lastStatusCode = lastApiException.getCode();
+        }
+    }
+
+    @Then("^I receive a 201 status code for event creation$")
+    public void i_receive_a_201_status_code_for_event_creation() {
+        assertEquals(201, lastApiResponse.getStatusCode());
     }
 }

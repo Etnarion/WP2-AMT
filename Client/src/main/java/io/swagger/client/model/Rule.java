@@ -105,8 +105,8 @@ import java.io.IOException;
 
 
   /**
-  * Get operator
-  * @return operator
+  * Get event type
+  * @return event type
   **/
   @Schema(description = "")
   public String getEventType() {
@@ -115,6 +115,7 @@ import java.io.IOException;
   public void setEventType(String eventType) {
     this.eventType = eventType;
   }
+
   public Rule badge(Badge badge) {
     this.badge = badge;
     return this;
@@ -123,8 +124,8 @@ import java.io.IOException;
 
 
   /**
-  * Get reward
-  * @return reward
+  * Get badge
+  * @return badge
   **/
   @Schema(required = true, description = "")
   public Badge getBadge() {

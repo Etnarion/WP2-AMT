@@ -116,7 +116,7 @@ public class User {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class Application {\n");
+        sb.append("class User {\n");
 
         sb.append("    id: ").append(toIndentedString(idUser)).append("\n");
         sb.append("}");

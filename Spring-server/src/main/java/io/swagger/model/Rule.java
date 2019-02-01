@@ -141,8 +141,8 @@ public class Rule   {
   }
 
   /**
-   * Get condition
-   * @return condition
+   * Get event type
+   * @return event type
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
@@ -224,7 +224,7 @@ public class Rule   {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    pointScale: ").append(toIndentedString(pointScale)).append("\n");
     sb.append("    target: ").append(toIndentedString(target)).append("\n");
-    sb.append("    condition: ").append(toIndentedString(eventType)).append("\n");
+    sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
     sb.append("    badge: ").append(toIndentedString(badge)).append("\n");
     sb.append("}");
     return sb.toString();

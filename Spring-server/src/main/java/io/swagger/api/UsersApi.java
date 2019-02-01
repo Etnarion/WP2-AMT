@@ -4,6 +4,7 @@ import io.swagger.annotations.*;
 import io.swagger.model.User;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -19,5 +20,5 @@ public interface UsersApi {
     @RequestMapping(value = "/users",
             consumes = { "application/json" },
             method = RequestMethod.POST)
-    ResponseEntity<User> addUser(@ApiParam(value = "" ,required=true )  @Valid @RequestBody User body);
+    ResponseEntity<User> addUser(@RequestHeader(value = "Authorization") String headerStr, @ApiParam(value = "" ,required=true )  @Valid @RequestBody User body);
 }

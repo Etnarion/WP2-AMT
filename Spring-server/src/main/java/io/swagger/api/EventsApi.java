@@ -33,7 +33,7 @@ public interface EventsApi {
     @RequestMapping(value = "/events",
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<Void> addEvent(@ApiParam(value = "" ,required=true )  @Valid @RequestBody Event body);
+    ResponseEntity<Void> addEvent(@RequestHeader(value = "Authorization") String headerStr, @ApiParam(value = "" ,required=true )  @Valid @RequestBody Event body);
 
 
     @ApiOperation(value = "Returns an event by ID.", nickname = "findEvent", notes = "", response = Event.class, tags={  })
@@ -42,7 +42,7 @@ public interface EventsApi {
     @RequestMapping(value = "/events/{eventId}",
         produces = { "application/json" }, 
         method = RequestMethod.GET)
-    ResponseEntity<Event> findEvent(@ApiParam(value = "",required=true) @PathVariable("eventId") Integer eventId);
+    ResponseEntity<Event> findEvent(@RequestHeader(value = "Authorization") String headerStr, @ApiParam(value = "",required=true) @PathVariable("eventId") Integer eventId);
 
 
     @ApiOperation(value = "Returns an array of all events", nickname = "getEvents", notes = "", response = Event.class, responseContainer = "List", tags={  })
@@ -51,7 +51,7 @@ public interface EventsApi {
     @RequestMapping(value = "/events",
         produces = { "application/json" }, 
         method = RequestMethod.GET)
-    ResponseEntity<List<Event>> getEvents();
+    ResponseEntity<List<Event>> getEvents(@RequestHeader(value = "Authorization") String headerStr);
 
 
     @ApiOperation(value = "Returns all events of a user.", nickname = "getUserEvents", notes = "", response = Event.class, responseContainer = "List", tags={  })
@@ -60,6 +60,6 @@ public interface EventsApi {
     @RequestMapping(value = "/events/user/{userId}",
         produces = { "application/json" }, 
         method = RequestMethod.GET)
-    ResponseEntity<List<Event>> getUserEvents(@ApiParam(value = "",required=true) @PathVariable("userId") Integer userId);
+    ResponseEntity<List<Event>> getUserEvents(@RequestHeader(value = "Authorization") String headerStr, @ApiParam(value = "",required=true) @PathVariable("userId") Integer userId);
 
 }

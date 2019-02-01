@@ -13,6 +13,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
+
 import javax.validation.Valid;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -40,7 +42,7 @@ public class UsersApiController implements UsersApi {
         this.request = request;
     }
 
-    public ResponseEntity<User> addUser(@ApiParam(value = "", required = true) @Valid @RequestBody User body) {
+    public ResponseEntity<User> addUser(@RequestHeader(value = "Authorization") String headerStr, @ApiParam(value = "", required = true) @Valid @RequestBody User body) {
         String accept = request.getHeader("Accept");
         String token = request.getHeader("Authorization");
         List<Application> applications = applicationRepository.findByToken(token);

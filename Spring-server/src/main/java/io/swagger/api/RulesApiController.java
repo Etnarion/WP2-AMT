@@ -53,7 +53,7 @@ public class RulesApiController implements RulesApi {
         this.request = request;
     }
 
-    public ResponseEntity<Void> addRule(@ApiParam(value = "" ,required=true )  @Valid @RequestBody Rule body) {
+    public ResponseEntity<Void> addRule(@RequestHeader(value = "Authorization") String headerStr, @ApiParam(value = "" ,required=true )  @Valid @RequestBody Rule body) {
         String accept = request.getHeader("Accept");
         String token = request.getHeader("Authorization");
         List<Application> applications = applicationRepository.findByToken(token);
@@ -70,7 +70,7 @@ public class RulesApiController implements RulesApi {
         }
     }
 
-    public ResponseEntity<Void> deleteRule(@ApiParam(value = "ID of rule to delete",required=true) @PathVariable("ruleId") Integer ruleId) {
+    public ResponseEntity<Void> deleteRule(@RequestHeader(value = "Authorization") String headerStr, @ApiParam(value = "ID of rule to delete",required=true) @PathVariable("ruleId") Integer ruleId) {
         String accept = request.getHeader("Accept");
         String token = request.getHeader("Authorization");
         Rule rule = ruleRepository.findOne(ruleId);
@@ -82,7 +82,7 @@ public class RulesApiController implements RulesApi {
         }
     }
 
-    public ResponseEntity<Rule> findRule(@ApiParam(value = "",required=true) @PathVariable("ruleId") Integer ruleId) {
+    public ResponseEntity<Rule> findRule(@RequestHeader(value = "Authorization") String headerStr, @ApiParam(value = "",required=true) @PathVariable("ruleId") Integer ruleId) {
         String accept = request.getHeader("Accept");
         String token = request.getHeader("Authorization");
         Rule rule = ruleRepository.findOne(ruleId);
@@ -93,7 +93,7 @@ public class RulesApiController implements RulesApi {
         }
     }
 
-    public ResponseEntity<List<Rule>> getRules() {
+    public ResponseEntity<List<Rule>> getRules(@RequestHeader(value = "Authorization") String headerStr) {
         String accept = request.getHeader("Accept");
         String token = request.getHeader("Authorization");
         List<Application> applications = applicationRepository.findByToken(token);
@@ -109,7 +109,7 @@ public class RulesApiController implements RulesApi {
         }
     }
 
-    public ResponseEntity<Void> updateRule(@ApiParam(value = ""  )  @Valid @RequestBody Rule body) {
+    public ResponseEntity<Void> updateRule(@RequestHeader(value = "Authorization") String headerStr, @ApiParam(value = ""  )  @Valid @RequestBody Rule body) {
         String accept = request.getHeader("Accept");
         String token = request.getHeader("Authorization");
         if (body.getApplication().getToken().equals(token)) {

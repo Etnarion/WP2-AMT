@@ -33,7 +33,7 @@ public interface BadgesApi {
     @RequestMapping(value = "/badges",
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<Void> addBadge(@ApiParam(value = "" ,required=true )  @Valid @RequestBody Badge body);
+    ResponseEntity<Void> addBadge(@RequestHeader(value = "Authorization") String headerStr, @ApiParam(value = "" ,required=true )  @Valid @RequestBody Badge body);
 
 
     @ApiOperation(value = "Returns a badge by ID.", nickname = "findBadge", notes = "", response = Badge.class, tags={  })
@@ -42,7 +42,7 @@ public interface BadgesApi {
     @RequestMapping(value = "/badges/{badgeId}",
         produces = { "application/json" }, 
         method = RequestMethod.GET)
-    ResponseEntity<Badge> findBadge(@ApiParam(value = "",required=true) @PathVariable("badgeId") Integer badgeId);
+    ResponseEntity<Badge> findBadge(@RequestHeader(value = "Authorization") String headerStr, @ApiParam(value = "",required=true) @PathVariable("badgeId") Integer badgeId);
 
 
     @ApiOperation(value = "Returns an array of all badges", nickname = "getBadges", notes = "", response = Badge.class, responseContainer = "List", tags={  })
@@ -51,7 +51,7 @@ public interface BadgesApi {
     @RequestMapping(value = "/badges",
         produces = { "application/json" }, 
         method = RequestMethod.GET)
-    ResponseEntity<List<Badge>> getBadges();
+    ResponseEntity<List<Badge>> getBadges(@RequestHeader(value = "Authorization") String headerStr);
 
 
     @ApiOperation(value = "Update a badge", nickname = "updateBadge", notes = "", tags={  })
@@ -60,6 +60,6 @@ public interface BadgesApi {
     @RequestMapping(value = "/badges",
         consumes = { "application/json" },
         method = RequestMethod.PUT)
-    ResponseEntity<Void> updateBadge(@ApiParam(value = ""  )  @Valid @RequestBody Badge body);
+    ResponseEntity<Void> updateBadge(@RequestHeader(value = "Authorization") String headerStr, @ApiParam(value = ""  )  @Valid @RequestBody Badge body);
 
 }

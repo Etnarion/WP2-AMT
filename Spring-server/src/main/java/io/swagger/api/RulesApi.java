@@ -34,7 +34,7 @@ public interface RulesApi {
     @RequestMapping(value = "/rules",
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<Void> addRule(@ApiParam(value = "" ,required=true )  @Valid @RequestBody Rule body);
+    ResponseEntity<Void> addRule(@RequestHeader(value = "Authorization") String headerStr, @ApiParam(value = "" ,required=true )  @Valid @RequestBody Rule body);
 
 
     @ApiOperation(value = "delete a rule by ID", nickname = "deleteRule", notes = "", tags={  })
@@ -44,7 +44,7 @@ public interface RulesApi {
     @RequestMapping(value = "/rules/{ruleId}",
         produces = { "application/json" }, 
         method = RequestMethod.DELETE)
-    ResponseEntity<Void> deleteRule(@ApiParam(value = "ID of rule to delete",required=true) @PathVariable("ruleId") Integer ruleId);
+    ResponseEntity<Void> deleteRule(@RequestHeader(value = "Authorization") String headerStr, @ApiParam(value = "ID of rule to delete",required=true) @PathVariable("ruleId") Integer ruleId);
 
 
     @ApiOperation(value = "Returns a rule by ID.", nickname = "findRule", notes = "", response = Rule.class, tags={  })
@@ -53,7 +53,7 @@ public interface RulesApi {
     @RequestMapping(value = "/rules/{ruleId}",
         produces = { "application/json" }, 
         method = RequestMethod.GET)
-    ResponseEntity<Rule> findRule(@ApiParam(value = "",required=true) @PathVariable("ruleId") Integer ruleId);
+    ResponseEntity<Rule> findRule(@RequestHeader(value = "Authorization") String headerStr, @ApiParam(value = "",required=true) @PathVariable("ruleId") Integer ruleId);
 
 
     @ApiOperation(value = "Returns an array of all rules", nickname = "getRules", notes = "", response = Rule.class, responseContainer = "List", tags={  })
@@ -62,7 +62,7 @@ public interface RulesApi {
     @RequestMapping(value = "/rules",
         produces = { "application/json" }, 
         method = RequestMethod.GET)
-    ResponseEntity<List<Rule>> getRules();
+    ResponseEntity<List<Rule>> getRules(@RequestHeader(value = "Authorization") String headerStr);
 
 
     @ApiOperation(value = "Update a rule", nickname = "updateRule", notes = "", tags={  })
@@ -71,6 +71,6 @@ public interface RulesApi {
     @RequestMapping(value = "/rules",
         consumes = { "application/json" },
         method = RequestMethod.PUT)
-    ResponseEntity<Void> updateRule(@ApiParam(value = ""  )  @Valid @RequestBody Rule body);
+    ResponseEntity<Void> updateRule(@RequestHeader(value = "Authorization") String headerStr, @ApiParam(value = ""  )  @Valid @RequestBody Rule body);
 
 }

@@ -52,7 +52,7 @@ public class PointScalesApiController implements PointScalesApi {
         this.request = request;
     }
 
-    public ResponseEntity<Void> addPointScale(@ApiParam(value = "" ,required=true )  @Valid @RequestBody PointScale body) {
+    public ResponseEntity<Void> addPointScale(@RequestHeader(value = "Authorization") String headerStr, @ApiParam(value = "" ,required=true )  @Valid @RequestBody PointScale body) {
         String accept = request.getHeader("Accept");
         String token = request.getHeader("Authorization");
         List<Application> applications = applicationRepository.findByToken(token);
@@ -69,7 +69,7 @@ public class PointScalesApiController implements PointScalesApi {
         }
     }
 
-    public ResponseEntity<PointScale> findPointScale(@ApiParam(value = "",required=true) @PathVariable("pointScaleId") Integer pointScaleId) {
+    public ResponseEntity<PointScale> findPointScale(@RequestHeader(value = "Authorization") String headerStr, @ApiParam(value = "",required=true) @PathVariable("pointScaleId") Integer pointScaleId) {
         String accept = request.getHeader("Accept");
         String token = request.getHeader("Authorization");
         PointScale pointScale = pointScaleRepository.findOne(pointScaleId);
@@ -80,7 +80,7 @@ public class PointScalesApiController implements PointScalesApi {
         }
     }
 
-    public ResponseEntity<List<PointScale>> getPointScales() {
+    public ResponseEntity<List<PointScale>> getPointScales(@RequestHeader(value = "Authorization") String headerStr) {
         String accept = request.getHeader("Accept");
         String token = request.getHeader("Authorization");
         List<Application> applications = applicationRepository.findByToken(token);
@@ -96,7 +96,7 @@ public class PointScalesApiController implements PointScalesApi {
         }
     }
 
-    public ResponseEntity<Void> updatePointScale(@ApiParam(value = ""  )  @Valid @RequestBody PointScale body) {
+    public ResponseEntity<Void> updatePointScale(@RequestHeader(value = "Authorization") String headerStr, @ApiParam(value = ""  )  @Valid @RequestBody PointScale body) {
         String accept = request.getHeader("Accept");
         String token = request.getHeader("Authorization");
         if (body.getApplication().getToken().equals(token)) {

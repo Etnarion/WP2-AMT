@@ -33,7 +33,7 @@ public interface PointScalesApi {
     @RequestMapping(value = "/pointScales",
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<Void> addPointScale(@ApiParam(value = "" ,required=true )  @Valid @RequestBody PointScale body);
+    ResponseEntity<Void> addPointScale(@RequestHeader(value = "Authorization") String headerStr, @ApiParam(value = "" ,required=true )  @Valid @RequestBody PointScale body);
 
 
     @ApiOperation(value = "Returns a point scale by ID.", nickname = "findPointScale", notes = "", response = PointScale.class, tags={  })
@@ -42,7 +42,7 @@ public interface PointScalesApi {
     @RequestMapping(value = "/pointScales/{pointScaleId}",
         produces = { "application/json" }, 
         method = RequestMethod.GET)
-    ResponseEntity<PointScale> findPointScale(@ApiParam(value = "",required=true) @PathVariable("pointScaleId") Integer pointScaleId);
+    ResponseEntity<PointScale> findPointScale(@RequestHeader(value = "Authorization") String headerStr, @ApiParam(value = "",required=true) @PathVariable("pointScaleId") Integer pointScaleId);
 
 
     @ApiOperation(value = "Returns an array of all point scales", nickname = "getPointScales", notes = "", response = PointScale.class, responseContainer = "List", tags={  })
@@ -51,7 +51,7 @@ public interface PointScalesApi {
     @RequestMapping(value = "/pointScales",
         produces = { "application/json" }, 
         method = RequestMethod.GET)
-    ResponseEntity<List<PointScale>> getPointScales();
+    ResponseEntity<List<PointScale>> getPointScales(@RequestHeader(value = "Authorization") String headerStr);
 
 
     @ApiOperation(value = "Update a point scale", nickname = "updatePointScale", notes = "", tags={  })
@@ -60,6 +60,6 @@ public interface PointScalesApi {
     @RequestMapping(value = "/pointScales",
         consumes = { "application/json" },
         method = RequestMethod.PUT)
-    ResponseEntity<Void> updatePointScale(@ApiParam(value = ""  )  @Valid @RequestBody PointScale body);
+    ResponseEntity<Void> updatePointScale(@RequestHeader(value = "Authorization") String headerStr, @ApiParam(value = ""  )  @Valid @RequestBody PointScale body);
 
 }

@@ -17,6 +17,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 
 import javax.validation.Valid;
 import javax.servlet.http.HttpServletRequest;
@@ -52,7 +53,7 @@ public class EventsApiController implements EventsApi {
         this.request = request;
     }
 
-    public ResponseEntity<Void> addEvent(@ApiParam(value = "" ,required=true )  @Valid @RequestBody Event body) {
+    public ResponseEntity<Void> addEvent(@RequestHeader(value = "Authorization") String headerStr, @ApiParam(value = "" ,required=true )  @Valid @RequestBody Event body) {
         String accept = request.getHeader("Accept");
         String token = request.getHeader("Authorization");
         List<Application> applications = applicationRepository.findByToken(token);
@@ -66,7 +67,7 @@ public class EventsApiController implements EventsApi {
         }
     }
 
-    public ResponseEntity<Event> findEvent(@ApiParam(value = "",required=true) @PathVariable("eventId") Integer eventId) {
+    public ResponseEntity<Event> findEvent(@RequestHeader(value = "Authorization") String headerStr, @ApiParam(value = "",required=true) @PathVariable("eventId") Integer eventId) {
         String accept = request.getHeader("Accept");
         String token = request.getHeader("Authorization");
         Event event = eventRepository.findOne(eventId);
@@ -77,7 +78,7 @@ public class EventsApiController implements EventsApi {
         }
     }
 
-    public ResponseEntity<List<Event>> getEvents() {
+    public ResponseEntity<List<Event>> getEvents(@RequestHeader(value = "Authorization") String headerStr) {
         String accept = request.getHeader("Accept");
         String token = request.getHeader("Authorization");
         List<Application> applications = applicationRepository.findByToken(token);
@@ -93,7 +94,7 @@ public class EventsApiController implements EventsApi {
         }
     }
 
-    public ResponseEntity<List<Event>> getUserEvents(@ApiParam(value = "",required=true) @PathVariable("userId") Integer userId) {
+    public ResponseEntity<List<Event>> getUserEvents(@RequestHeader(value = "Authorization") String headerStr, @ApiParam(value = "",required=true) @PathVariable("userId") Integer userId) {
         String accept = request.getHeader("Accept");
         String token = request.getHeader("Authorization");
         List<Application> applications = applicationRepository.findByToken(token);
